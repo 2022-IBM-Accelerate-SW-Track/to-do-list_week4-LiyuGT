@@ -42,14 +42,14 @@ class AddTodo extends Component {
     if (this.state.content.trim()) {
       const jsonObject = {
         id: this.state.id,
-        task: content,
-        currentDate: date,
-        dueDate: duedate
+        task: this.content,
+        currentDate: this.date,
+        dueDate: this.duedate
      };
 
      Axios({
       method: "POST",
-      url: "http://localhost:<2222>/add/item",
+      url: "http://localhost:2222/add/item",
       data: {jsonObject},
       headers: {
          "Content-Type": "application/json"
